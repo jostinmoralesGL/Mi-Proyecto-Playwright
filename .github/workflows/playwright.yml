@@ -26,4 +26,3 @@ jobs:
 
       - name: Run Playwright tests
         run: npx playwright test
-// cambio para correr workflow
