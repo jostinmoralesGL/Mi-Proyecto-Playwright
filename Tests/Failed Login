@@ -13,6 +13,6 @@ test('Failed login - invalid password', async ({ page }) => {
 
   // Assert error message
   await expect(page.locator('.alert-danger')).toHaveText(
-    /Your password is invalid!/i
+    /Your password is not valid!/i
   );
 });
