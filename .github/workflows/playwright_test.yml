@@ -4,12 +4,18 @@ on:
       - master
   pull_request:
     branches:
-      - master 
+      - master
+  workflow_dispatch:
+  inputs:
+    environment:
+      type: choice
+      description: "Select environment"
+      options: ["Test", "Staging"]
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    environment: staging
+    environment: ${{inputs.environment}}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -27,6 +33,7 @@ jobs:
 
       - name: Run Playwright tests
         run: npm test
+
 
 
 
