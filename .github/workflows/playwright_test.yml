@@ -9,6 +9,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    environment: staging
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -26,5 +27,6 @@ jobs:
 
       - name: Run Playwright tests
         run: npm test
+
 
 
