@@ -4,8 +4,7 @@ on:
       - master
   pull_request:
     branches:
-      - master
-  workflow_dispatch: 
+      - master 
 
 jobs:
   test:
@@ -27,4 +26,5 @@ jobs:
 
       - name: Run Playwright tests
         run: npm test
+
 
