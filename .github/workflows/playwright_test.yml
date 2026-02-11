@@ -8,14 +8,17 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-      type: choice
-      description: "Select environment"
-      options: ["Test", "Staging"]
+        description: "Select environment"
+        required: true
+        type: choice
+        options:
+          - test
+          - staging
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    environment: ${{inputs.environment}}
+    environment: ${{ inputs.environment }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -33,6 +36,7 @@ jobs:
 
       - name: Run Playwright tests
         run: npm test
+
 
 
 
